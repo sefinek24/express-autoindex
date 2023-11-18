@@ -2,7 +2,7 @@
 
 <div>
 	<a href="https://www.npmjs.com/package/express-autoindex">
-		<img alt="npm" src="https://img.shields.io/npm/v/express-autoindex">
+		<img src="https://img.shields.io/npm/v/express-autoindex" alt="npm">
 	</a>
 	<img alt="GitHub" src="https://img.shields.io/github/license/c-bertran/express-autoindex">
 	<img alt="npm" src="https://img.shields.io/npm/dm/express-autoindex">
@@ -21,7 +21,7 @@ The objectives are:
 * The `lightest` possible
 
 <p align="center">
-	<img width="500" alt="Example image" src="./md/img.png"/>
+	<img src="./md/img.png" width="540px" alt="Example image">
 </p>
 
 - [Install](#install)
