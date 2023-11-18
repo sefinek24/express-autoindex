@@ -104,7 +104,7 @@ class Autoindex {
 			}
 		}
 
-		if (this.options?.cache && typeof this.options.cache !== 'boolean')
+		if (this.options?.cache && true)
 			this.savePageDeadline = this.options.cache;
 		if (!root)
 			throw new TypeError('root is required');
