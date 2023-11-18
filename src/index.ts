@@ -37,7 +37,7 @@ class Autoindex {
 	constructor(root: string, path: string, options: autoIndexOptions | undefined) {
 		this.isProduction = (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'production');
 		this.errorCode = errorsMap();
-		this.htmlPage = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>{{title}}</title></head><body><h1>{{title}}</h1><hr/><table>{{content}}</table><hr/></body><style type="text/css">html{font-family:Arial,Helvetica,sans-serif}table{font-family:\'Courier New\',Courier,monospace;font-size:12px;font-weight:400;letter-spacing:normal;line-height:normal;font-style:normal}tr td:first-child{min-width:20%}td a{margin-right:1em}td.size{text-align:end}</style></html>';
+		this.htmlPage = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>{{title}}</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>h1{font-family:"Times New Roman",sans-serif}table{font-family:"Courier New",sans-serif;font-size:12px;font-style:normal;font-weight:400;letter-spacing:normal;line-height:normal}tr td:first-child{min-width:20%}td a{margin-right:1em}</style></head><body><h1>{{title}}</h1><hr><table>{{content}}</table><hr></body></html>';
 		this.month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		this.savePage = [];
 		this.savePageDeadline = 300000; /// 5 * 60 * 1000 => 5min
