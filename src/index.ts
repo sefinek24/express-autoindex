@@ -9,24 +9,16 @@ import errorsMap from './errorsMap';
 
 import type { Request, Response, NextFunction } from 'express';
 import type { Stats } from 'fs';
-import type {
-	autoIndexOptions,
-	defaultKeyOfJson,
-	errorMap,
-	save,
-	serveConfig,
-	statFile,
-	dateRegexGroups
-} from './interface';
+import type { autoIndexOptions, defaultKeyOfJson, errorMap, save, serveConfig, statFile, dateRegexGroups } from './interface';
 
-class Autoindex {
-	private isProduction: boolean;
+class AutoIndex {
+	private readonly isProduction: boolean;
 	private errorCode: errorMap;
 	private htmlPage: string;
-	private month: string[];
-	private savePage: save[];
+	private readonly month: string[];
+	private readonly savePage: save[];
 	private savePageDeadline: number;
-	private dateFormat: Map<string, (d: Date | dateRegexGroups) => string>;
+	private readonly dateFormat: Map<string, (d: Date | dateRegexGroups) => string>;
 	private dateRegexParse: string;
 	
 	options: autoIndexOptions;
@@ -405,11 +397,11 @@ class Autoindex {
 export default (root: string, options: autoIndexOptions | undefined = undefined): (
 	(req: Request, res: Response, next: NextFunction) => void
 ) => {
-	let instance: Autoindex | undefined = undefined;
+	let instance: AutoIndex | undefined = undefined;
 
 	return (req: Request, res: Response, next: NextFunction) => {
 		if (instance === undefined)
-			instance = new Autoindex(root, req.baseUrl, options);
+			instance = new AutoIndex(root, req.baseUrl, options);
 		if (instance.options.strict && req.method !== 'GET' && req.method !== 'HEAD') {
 			res.status(405);
 			res.setHeader('Allow', 'GET, HEAD');
