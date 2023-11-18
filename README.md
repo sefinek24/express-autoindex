@@ -26,20 +26,20 @@ The objectives are:
 
 - [Install](#install)
 - [API](#api)
-	- [autoindex(path, options)](#autoindexpath-options)
-	- [Options](#options)
+    - [autoindex(path, options)](#autoindexpath-options)
+    - [Options](#options)
 - [Customization of the html page appearance](#customization-of-the-html-page-appearance)
-	- [Variables](#variables)
-	- [CSS](#css)
-	- [HTML example](#html-example)
+    - [Variables](#variables)
+    - [CSS](#css)
+    - [HTML example](#html-example)
 - [Customization of the date format](#customization-of-the-date-format)
-	- [Optional character](#optional-character)
-	- [Date format example](#date-format-example)
+    - [Optional character](#optional-character)
+    - [Date format example](#date-format-example)
 - [Customization of the JSON format](#customization-of-the-json-format)
-	- [JSON example](#json-example)
+    - [JSON example](#json-example)
 - [Error handling](#error-handling)
-	- [NodeJS error code list](#nodejs-error-code-list)
-	- [Error code example](#error-code-example)
+    - [NodeJS error code list](#nodejs-error-code-list)
+    - [Error code example](#error-code-example)
 - [Minimalist example](#minimalist-example)
 - [Production mode](#production-mode)
 - [Contributors](#contributors)
@@ -102,40 +102,40 @@ with a `path` of `'public'` will look at `'public/some/dir'`.
   **Default** to `300000` = 5 mins
 
 * #### customJsonFormat
-	type: `object`
-	```ts
-	{
-		isDir: string,
-		name: string,
-		path: string,
-		time: string,
-		size: string
-	}
-	```
+  type: `object`
+  ```ts
+  {
+      isDir: string,
+      name: string,
+      path: string,
+      time: string,
+      size: string
+  }
+  ```
 
   By default, the json generated for a file or folder follows a precise structure. It is possible to rename or remove the **key** of this object.
 
-	More detail [here](#customization-of-the-json-format)
+  More detail [here](#customization-of-the-json-format)
 
   **Default** to `undefined`
 
 * #### customTemplate
-	type: `string`
-	
-	Pass the relative path of your custom template file. For example, if the file is located in the same folder of your startup server file, simply write `my-file.html` or `./my-file.html`.
+  type: `string`
 
-	More detail [here](#customization-of-the-html-page-appearance)
+  Pass the relative path of your custom template file. For example, if the file is located in the same folder of your startup server file, simply write `my-file.html` or `./my-file.html`.
 
-	**Default** to `undefined`
+  More detail [here](#customization-of-the-html-page-appearance)
+
+  **Default** to `undefined`
 
 * #### dateFormat
-	type: `string`
-	
-	Custom date print format.
-	
-	More detail [here](#customization-of-the-date-format)
+  type: `string`
 
-	**Default** to `undefined`
+  Custom date print format.
+
+  More detail [here](#customization-of-the-date-format)
+
+  **Default** to `undefined`
 
 * #### dirAtTop
   type: `boolean`
@@ -181,7 +181,7 @@ with a `path` of `'public'` will look at `'public/some/dir'`.
   type: `boolean`
 
   Allow only `HEAD` and `GET` HTTP methods.
-	
+
   **Default** to `true`
 
 ## Customization of the html page appearance
