@@ -226,18 +226,19 @@ class Autoindex {
 	}
 
 	private file(data: serveConfig, stat: Stats, res: Response, next: NextFunction) {
-		const mimeType = mime.getType(data.serverPath) ?? 'application/octet-stream';
+		const mimeType = (mime as any).getType(data.serverPath) ?? 'application/octet-stream';
 		const lastModified = this.dateToHTMLDate(stat.mtime);
 
 		chardet.detectFile(data.serverPath, { sampleSize: 256 })
 			.then((encoding) => {
 				res.setHeader('Content-Length', stat.size);
 				res.setHeader('Content-Type', `${mimeType}; charset=${encoding ?? 'UTF-8'}`);
-				if (lastModified)
+				if (lastModified) {
 					res.setHeader('Last-Modified', lastModified);
-				res.writeHead(200);
-				createReadStream(data.serverPath)
-					.pipe(res);
+					res.writeHead(200);
+					createReadStream(data.serverPath)
+						.pipe(res);
+				}
 			})
 			.catch((e) => next(this.error(e, res)));
 	}
