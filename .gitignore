@@ -1,3 +1,6 @@
+# Workspace
+.idea
+
 # Logs
 logs
 *.log
@@ -32,5 +35,4 @@ jspm_packages/
 .env.production
 
 # Dist
-dist
-.rollup.cache
+
