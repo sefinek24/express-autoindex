@@ -2,7 +2,8 @@
 
 <div>
 	<a href="https://www.npmjs.com/package/express-autoindex">
-		<img src="https://img.shields.io/npm/v/express-autoindex" alt="npm"></a>
+		<img src="https://img.shields.io/npm/v/express-autoindex" alt="npm">
+    </a>
 	<img alt="GitHub" src="https://img.shields.io/github/license/c-bertran/express-autoindex">
 	<img alt="npm" src="https://img.shields.io/npm/dm/express-autoindex">
 </div>
