@@ -29,7 +29,7 @@ class AutoIndex {
 	constructor(root: string, path: string, options: autoIndexOptions | undefined) {
 		this.isProduction = (process.env.NODE_ENV !== undefined && process.env.NODE_ENV === 'production');
 		this.errorCode = errorsMap();
-		this.htmlPage = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>{{title}}</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>h1{font-family:"Times New Roman",sans-serif}table{font-family:"Courier New",sans-serif;font-size:12px;font-style:normal;font-weight:400;letter-spacing:normal;line-height:normal}tr td:first-child{min-width:20%}td a{margin-right:1em}</style></head><body><h1>{{title}}</h1><hr><table>{{content}}</table><hr></body></html>';
+		this.htmlPage = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>{{title}}</title><meta name="viewport" content="width=device-width,initial-scale=1"><style>h1{font-family:"Times New Roman",sans-serif}table{font-family:"Courier New",sans-serif;font-size:12px}tr td:first-child{padding-right:37px}tr td:last-child:not(.back){text-align:right;padding-left:37px}</style></head><body><h1>{{title}}</h1><hr><table>{{content}}</table><hr></body></html>';
 		this.month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		this.savePage = [];
 		this.savePageDeadline = 300000; /// 5 * 60 * 1000 => 5min
@@ -356,7 +356,7 @@ class AutoIndex {
 					dataReturn = elements.map((e) => this.generateJson(e));
 				else {
 					if (data.title.localeCompare('/') !== 0)
-						htmlContent.push(`<tr><td><a href="${data.path.replace(/[^/]+$/, '')}">../</a></td></tr>`);
+						htmlContent.push(`<tr><td class="back"><a href="${data.path.replace(/[^/]+$/, '')}">../</a></td></tr>`);
 					for (const el of elements) {
 						if (this.options.dirAtTop) {
 							if (el.dirent.isDirectory())
